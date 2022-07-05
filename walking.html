@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#user{
+			width: 70px;
+			border-radius: 10px;
+			background-color: #0b9;
+			position: absolute;
+			color: white;
+			justify-content: center;
+	    	align-items: center;
+	    	align-content: center;
+	    	text-align: center;
+	    	display: block;
+		}
+		#user h4{
+			text-align: center;
+		}
+		#left, #right, #up,#down,#size, #small{
+			top: 40px;
+    		position: absolute;
+    		border: 1px solid white;
+    		background-color: #0f9999;
+    		padding: 1rem;
+    		border-radius: 50%;
+    		cursor:pointer;
+	    	width: 30px;
+	    	justify-content: center;
+	    	align-items: center;
+	    	align-content: center;
+	    	text-align: center;
+		}
+		#right{
+			left: 114px;
+		}
+		#up{
+			top: 14px;
+    		left: 56px;
+		}
+		#down{
+		    left: 56px;
+    		top: 66px;
+		}
+		#s{
+			border: 1px solid skyblue;
+			position: relative;
+			width: 800px;
+			height: 600px;
+			margin-left: 200px;
+			padding: 10px;
+		}
+		#size{
+			left: 100px;
+		}
+		#size, #small{
+			width: 60px;
+		    top: 150px;
+		    background-color: tomato;
+		    border-radius: 10px;
+		}
+
+		
+
+	</style>
+</head>
+<body >
+	<div id="s">
+		<div id="user">
+			<h4>Player 1</h4>
+		</div>
+	</div>	
+	
+
+
+	<p id="left">left</p>
+		<p id="right">right</p>
+		<p id="up">up</p>
+		<p id="down">down</p>
+		<span id="size">Big</span>
+		<span id="small">Small</span>
+
+	<script>
+		let user = document.getElementById('user');
+
+		function moveRight(){
+			let left = user.style.left;
+			if (left != "") {
+				left = parseInt(left);
+			}
+			else{
+				left = 100;
+			}
+			left += 20;
+			user.style.left = left + "px";
+		}
+		function moveLeft(){
+			let left = user.style.left;
+			if (left != "") {
+				left = parseInt(left);
+			}
+			else{
+				left = 100;
+			}
+			left -= 20;
+			user.style.left = left + "px";
+		}
+		function moveDown(){
+			let top = user.style.top;
+			if (top != "") {
+				top = parseInt(top);
+			}
+			else{
+				top = 100;
+			}
+			top += 20;
+			user.style.top = top + "px";
+		}
+		function moveUp(){
+			let top = user.style.top;
+			if (top != "") {
+				top = parseInt(top);
+			}
+			else{
+				top = 100;
+			}
+			top -= 20;
+			user.style.top = top + "px";
+		}
+
+		let right = document.getElementById("right"),
+			left = document.getElementById("left"),
+			up = document.getElementById("up"),
+			down = document.getElementById("down"),
+			size = document.getElementById("size");
+		right.addEventListener("click", moveRight, false);
+		left.addEventListener("click", moveLeft, false);
+		up.addEventListener("click", moveUp, false);
+		down.addEventListener("click", moveDown, false);
+		size.addEventListener('click', function(){
+			let width =  user.style.width;
+			height = 80;
+			width =height+ 80;
+			user.style.width = width + "px";
+			user.style.height = height + "px";
+		});
+		small.addEventListener("click", function(){
+			let width =  user.style.width;
+			height = 40;
+			width =height+ 40;
+			user.style.width = width + "px";
+			user.style.height = height + "px";
+		})
+
+	</script>
+				
+</body>
+</html>

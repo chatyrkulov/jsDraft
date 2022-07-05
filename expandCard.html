@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.container{
+			border: 1px solid #fff;
+			height: 60px;
+			width: 60px;
+			display: flex;
+			overflow: hidden;
+			border-radius: 10px;
+			padding: 4px;
+			background-color: #555;
+			justify-content: space-between;
+			transition: 1.2s ease;
+			cursor: pointer;
+		}
+		.container:hover{
+			width: 360px;
+			transition: 3s ease;
+		}
+		.container:hover .userDetal{
+			position: relative;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			justify-content: space-between;
+			transition: 3s ease;
+			overflow: hidden;
+		}
+		.image{
+			height: 60px;
+			min-width: 60px;
+			position: relative;
+			border-radius: 50%;
+			overflow: hidden;
+			padding: 0;
+			
+		}
+		.image img{
+			position: absolute;
+			height: 100%;
+			left: 0;
+			top: 0;
+			width: 100%;
+			object-fit: contain;z-index: 0;
+		}
+		p{
+			font-size: 1rem;
+			float: left;
+			white-space: nowrap;
+			font-weight: bold;
+			margin: 15px;
+			color: #fff;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="userDetal">
+			<div class="image"><img src="step.png" alt=""></div>
+		</div>
+		<p>101 <br> Post</p>
+		<p>78k <br> Followers</p>
+		<p>1.1k <br> Following</p>
+	</div>
+</body>
+</html>

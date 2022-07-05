@@ -1,0 +1,66 @@
+<!doctype html />
+<html>
+<head>
+<style>
+img {
+	height: auto;
+	width:  100px;
+	margin: 0.1rem 1rem;
+}
+.card{
+	width: 20rem;
+	display: block;
+	border: 1px solid black;
+	background-color: #8af;
+	padding:  4px 10px;
+	display: flex;
+	margin: 0.5rem ;
+} 
+
+</style>
+</head>
+<body >
+	<div class="card">
+		<img src="step.jpg"
+		onload="addMessage('успешно загружено — 1')"
+		onerror="addMessage('ошибки загрузки — 1')"/>
+		<p id="txt"></p>
+	</div>
+	<div class="card">
+		<img src="step.jpg"
+		onload="addMessage1('успешно загружено — 2')"
+		onerror="addMessage1('ошибки загрузки — 2')"/>
+		<p id="txt1"></p>
+	</div>
+	<div class="card">
+		<img src="step.jpg"
+		onload="addMessage2('успешно загружено — 3')"
+		onerror="addMessage2('ошибки загрузки — 3')"/>
+		<p id="txt2"></p>
+	</div>
+	<div class="card">
+		<img src="step2.jpg"
+		onload="addMessage3('успешно загружено — 4')"
+		onerror="addMessage3('ошибки загрузки — 4')"/>
+		<p id="txt4"></p>
+	</div>
+		
+
+
+
+<script>
+function addMessage(msg) {
+	window.txt.innerHTML += msg + "<br/>"
+}
+function addMessage1(msg) {
+	window.txt1.innerHTML += msg + "<br/>"
+}
+function addMessage2(msg) {
+	window.txt2.innerHTML += msg + "<br/>"
+}
+function addMessage3(msg) {
+	window.txt4.innerHTML += msg + "<br/>"
+}
+</script>
+</body>
+</html>

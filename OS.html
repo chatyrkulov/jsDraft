@@ -1,0 +1,38 @@
+<!doctype html />
+<html>
+<head>
+<style>
+	input{
+height: 200px;
+width: 400px;
+font-size: 44px;
+}
+</style>
+</head>
+<body>
+
+<input type="text" id="txt">
+<a href="https://www.youtube.com" >video rolic</a>
+
+<script>
+window.onbeforeunload =
+function(e) {
+	if(text.value.length > 0) {
+		var msg = 'Text not saved';
+		e.returnValue = msg;
+		return msg;
+	}
+	return null;
+}
+window.onbeforeunload = 
+function(e){
+	if (txt.value !== "bet") {
+		var jim = 'where is the text';
+		e.returnValue = jim;
+		return jim;
+	}
+	return null;
+}
+</script>
+</body>
+</html>

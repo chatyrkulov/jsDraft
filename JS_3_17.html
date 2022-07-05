@@ -1,0 +1,27 @@
+<!doctype html />
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Defaults</title>
+</head>
+<body>
+<h1>Click on page and press a key</h1>
+<h2 id="out"></h2>
+<p id="i"></p>
+<script>
+document.body.onkeydown = function(e) {
+  var txt = "" ;
+  let t= "e.key = ";
+  if(e.ctrlKey)  txt += "Ctrl - " ;
+  if(e.altKey)   txt += "Alt - " ;
+  if(e.shiftKey) txt += "Shift - " ;
+  txt += e.key ;
+  t += e.key ;
+  out.innerText = txt ;
+  i.innerText = t;
+  e.preventDefault() ;
+}
+
+</script>
+</body>
+</html>

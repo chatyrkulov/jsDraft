@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		body {
+		margin: 0;
+		position: relative;
+		}
+		#gun, #bullet, #aim, #btn {
+		position: absolute;
+		}
+		#bullet, #aim {
+		border-radius: 50%;
+		}
+		#gun {
+		background: navy;
+		height: 20px;
+		left: 0;
+		top: 50px;
+		width: 50px;
+		}
+		#gun img{
+			width: 140px;
+
+		}
+		#bullet {
+		background: khaki;
+		height: 20px;
+		left: 100px;
+		width: 40px;
+		top: 70px;
+		z-index: -1;
+		}
+		#bullet img{
+			width: 40px;
+			height: 40px;
+		}
+		#aim {
+		background: red;
+		height: 60px;
+		left: 700px;
+		top: 60px;
+		width: 50px;
+		}
+		#btn{
+			top: 10rem;
+
+		}
+		</style>	
+</head>
+<body onkeydown="keyHandler(event)">
+	<h1>Press space</h1>
+	<div id="gun">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJCc_1jT9BOLU091bw6jaf09CI_utoMNnCoA&usqp=CAU" alt="">
+	</div>
+	<div id="bullet">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy2fi6E97sdj8kpqxOmnYxtO0vP9AVhNL3bw&usqp=CAU" alt="">
+	</div>
+	<div id="aim"></div>
+	<button id="btn" onclick="alert('нажмите на пробел Space')">Click</button>
+<script>
+	function keyHandler(e){
+		console.log(e);
+		if(e.code == "Space" && !onFly) {
+		onFly = true;
+		moveBullet();
+	}
+	if(e.code == "Escape" && onFly) {
+		onFly = false;
+		bulletX = 30;
+		bullet.style.left = bulletX + "px";
+	}
+}
+
+	var bulletX = 30;
+	var onFly = false;
+	function moveBullet() {
+		if(onFly){
+			bulletX += 7;
+			if(bulletX >= 700){
+				bulletX = 30;
+				onFly = false;
+			}
+			else {
+				setTimeout(moveBullet, 50);
+			}
+			bullet.style.left = bulletX + "px";
+		}
+	}
+</script>
+</body>
+</html>

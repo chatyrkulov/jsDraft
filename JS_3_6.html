@@ -1,0 +1,32 @@
+<!doctype html />
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Events</title>
+  <style>
+.pole {
+position: relative;
+height: 400px;
+width: 700px;
+background-color: skyblue;
+}
+#stranger {
+background: navy;
+height: 50px;
+width: 100px;
+position:absolute;
+}
+</style>
+</head>
+<body >
+  <div class="pole" onclick="moveStranger(event)">
+    <div id="stranger"></div>
+  </div>
+<script>
+function moveStranger(e){
+stranger.style.left=e.pageX+'px';
+stranger.style.top =e.pageY+'px'
+}
+</script>
+</body>
+</html>
